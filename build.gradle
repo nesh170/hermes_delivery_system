@@ -3,12 +3,25 @@ plugins {
     id 'application'
 }
 
+version = '1.0.0'
+
 sourceCompatibility = 1.8
 
 mainClassName = 'Application'
 
 repositories {
     mavenCentral()
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Hermes Jar',
+                'Implementation-Version': version,
+                'Main-Class': 'Application'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
 
 dependencies {

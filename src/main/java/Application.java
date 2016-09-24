@@ -18,13 +18,14 @@ public class Application {
         });
 
         post("/test", (req, res) -> {
+            return "banana received";/*
             String body = req.body();
             StringBuilder sb = new StringBuilder(body);
             File f = new File("test.txt");
             try(FileWriter writer = new FileWriter(f.getAbsoluteFile())){
                 writer.append(sb);
             }
-            return "writtn";
+            return "writtn";*/
         });
     }
 
