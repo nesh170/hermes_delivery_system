@@ -1,2 +1,6 @@
 # hermes_delivery_system
-We are testing whether this works :D
+ECE 495: Ocean Engineering
+Hermes Delivery System Wifi Repository
+
+List of Contributors:
+Mark Chen
