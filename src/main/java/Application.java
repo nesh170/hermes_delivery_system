@@ -19,14 +19,17 @@ public class Application {
 
         post("/test", (req, res) -> {
             String body = req.body();
-            return "banana received" + " " + body.length();/*
 
             StringBuilder sb = new StringBuilder(body);
-            File f = new File("test.txt");
+            long unixTime = System.currentTimeMillis() / 1000L;
+
+            File f = new File("sonar_" + unixTime + ".txt");
             try(FileWriter writer = new FileWriter(f.getAbsoluteFile())){
                 writer.append(sb);
+                return "{ \"success\": true }";
+            } catch (Exception e) {
+                return "{ \"success\": false }";
             }
-            return "writtn";*/
         });
     }
 
